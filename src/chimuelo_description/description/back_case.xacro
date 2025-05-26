@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+		
+	<joint name="back_joint" type="fixed">
+		<parent link="base_link"/>
+		<child link="back_link"/>
+		<axis xyz="0 0 0" />
+		<origin xyz="-0.25232 0.0020794 0.13327" rpy="0 0.10375 3.1416" />
+	</joint>
+	
+	
+	<link name="back_link">
+		<visual>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/back_Link.STL"/>
+		      </geometry>
+		      <material name="acrilic"/>
+	    	</visual>
+	    
+	    	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/back_Link.STL"/>
+			</geometry>
+		</collision>
+	    
+		<inertial>
+			<mass value="0.38703" />
+			<origin xyz="-0.023886 -6.2177E-07 0.013779" rpy="0 0 0"/>
+			<inertia
+        			ixx="0.00085878"
+        			ixy="2.2072E-09"
+        			ixz="5.4087E-05"
+        			iyy="0.0003374"
+        			iyz="-3.4489E-10"
+        			izz="0.00077205" />
+		</inertial>
+	</link>
+	
+	<gazebo reference="back_link">
+		<material>Gazebo/White</material>
+ 	</gazebo>
+	
+</robot>

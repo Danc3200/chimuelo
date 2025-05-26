@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<material name="acrilic2"> 
+		<color rgba="0.901960784313726 0.901960784313726 0.901960784313726 0.3"/>
+	</material>
+	
+	
+	<joint name="cases_joint" type="fixed">
+		<parent link="base_link"/>
+		<child link="cases_link"/>
+		<axis xyz="0 0 0" />
+		<origin xyz="0.21153 7.9351E-05 -0.032426" rpy="1.5708 0 0"/>
+	</joint>
+	
+	
+	<link name="cases_link">
+		<visual>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/cases_Link.STL"/>
+		      </geometry>
+		      <material name="acrilic2"/>
+	    	</visual>
+	    
+	    	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/cases_Link.STL"/>
+			</geometry>
+		</collision>
+	    
+		<inertial>
+			<mass value="0.21518" />
+			<origin xyz="-0.20387 0.019936 -0.0058955" rpy="0 0 0"/>
+			<inertia
+        			ixx="0.00087579"
+        			ixy="0.00010122"
+        			ixz="-1.7914E-08"
+        			iyy="0.0010368"
+        			iyz="5.0181E-09"
+        			izz="0.00053638" />
+		</inertial>
+	</link>
+	
+</robot>

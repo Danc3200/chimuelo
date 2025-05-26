@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<material name="raro"> 
+		<color rgba="0.79216 0.81961 0.93333 0.3" />
+	</material>
+
+
+	<joint name="front_camera_joint" type="fixed">
+		<parent link="base_link" />
+		<child link="front_camera_link" />
+		<axis xyz="0 0 0" />
+		<origin xyz="0.21053 7.9351E-05 0.035594" rpy="0 0 0"/>
+	</joint>
+	
+	<link name="front_camera_link">
+		<visual>
+		      <origin xyz="0 0 0" rpy="0 0 0" />
+		      <geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/camerafront_Link.STL"/>
+		      </geometry>
+		      <material name="raro" />
+	    	</visual>
+	    
+	    	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/camerafront_Link.STL"/>
+			</geometry>
+		</collision>
+	    
+		<inertial>
+			<mass value="0.016731" />
+			<origin xyz="-0.002 4.4409E-16 0" rpy="0 0 0"/>
+			<inertia ixx="1.6437E-05"
+				 ixy="-4.8473E-23"
+				 ixz="3.2529E-22"
+				 iyy="2.278E-06"
+				 iyz="-8.5424E-22"
+ 				 izz="1.4204E-05" />
+		</inertial>
+	</link>
+	
+	
+	<joint name="back_camera_joint" type="fixed">
+		<parent link="base_link"/>
+		<child link="back_camera_link"/>
+		<axis xyz="0 0 0" />
+		<origin xyz="-0.24453 0.0020794 0.17412" rpy="0 -0.17323 -3.1416"/>
+	</joint>
+
+	
+	<link name="back_camera_link">
+		<visual>
+		      <origin xyz="0 0 0" rpy="0 0 0"/>
+		      <geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/cameraback_Link.STL"/>
+		      </geometry>
+		      <material name="raro"/>
+	    	</visual>
+	    
+	    	<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="file://$(find chimuelo_description)//meshes/cameraback_Link.STL"/>
+			</geometry>
+		</collision>
+	    
+		<inertial>
+			<mass value="0.016731" />
+			<origin xyz="-0.0016341 -2.4731E-06 -0.0011538" rpy="0 0 0" />
+			<inertia
+				ixx="9.0103E-06"
+				ixy="-4.9082E-11"
+				ixz="4.3103E-07"
+				iyy="9.4862E-07"
+				iyz="7.7782E-11"
+				izz="8.6965E-06" />
+		</inertial>
+	</link>
+	
+	<gazebo reference="front_camera_link">
+		<material>Gazebo/GreyTransparent</material>
+ 	</gazebo> 
+ 	
+ 	<gazebo reference="back_camera_link">
+		<material>Gazebo/GreyTransparent</material>
+ 	</gazebo>
+	
+</robot>
