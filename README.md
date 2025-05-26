@@ -13,13 +13,6 @@ Chimuelo es un entorno de desarrollo basado en DevContainer para trabajar con RO
 
 Facilitar el desarrollo y la prueba de paquetes ROS 2 dentro de un entorno aislado, replicable y listo para CI/CD en el futuro. Ideal para desarrolladores que trabajan con ROS 2 en distintas máquinas.
 
-## 📁 Estructura del proyecto
-chimuelo/
-├── .devcontainer/
-│ ├── devcontainer.json
-│ └── Dockerfile
-├── chimuelo_ws/
-
 ## ⚙️ Cómo usar
 
 ### 1. Requisitos previos
