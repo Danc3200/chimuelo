@@ -1,0 +1,23 @@
+{
+  "name": "Chimuelo ROS 2 Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "ms-iot.vscode-ros",
+        "foxglove.vscode-foxglove"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/chimuelo_ws,target=/chimuelo_ws,type=bind"
+  ],
+  "workspaceFolder": "/chimuelo_ws",
+  "postCreateCommand": ". /opt/ros/humble/setup.bash && colcon build",
+  "remoteUser": "root"
+}
