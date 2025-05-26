@@ -20,7 +20,7 @@
     "--ipc=host"
   ],
   "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace/chimuelo,type=bind"
+    "source=${localWorkspaceFolder}/src,target=/workspace/chimuelo/src,type=bind"
   ],
   "workspaceFolder": "/workspace/chimuelo",
   "postCreateCommand": ". /opt/ros/humble/setup.bash && colcon build",
